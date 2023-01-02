@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap.css">
+  </head>
+  <body class="bg-success bg-gradient bg-opacity-10">
+
+    <div class="jumbotron text-center bg-danger p-2 text-dark bg-opacity-25">
+      <div class="bg-warning p-2 text-dark bg-opacity-50">
+        <img src="assets/img/coffelogo.png" class="img" style="width: 150px;" alt="...">
+        <h1><span style="color: rgb(66, 41, 16);">Coffe</span><span style="color: rgb(66, 41, 16);;;">Shop</span> </h1>
+        <p>Drink some coffee will make your day Happy!</p>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg bg-light nav-pills shadow" style="margin-bottom: 30px;">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav " style="margin-left: 10px;">
+
+            <li class="nav-item">
+              <a class="nav-link fw-bold" aria-current="page" href="index.html">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link fw-bold" aria-current="page" href="galery.html">Galery</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link fw-bold active" aria-current="page" href="contact.html" style="color: white;">Contact Us</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div style="margin-left: 30px;">
+      <h3 id="displayDateTime" style="justify-content: end;"></h3>
+      <h4 id="lblGreetings"></h4>
+    </div>
+
+  
+<div class="container-fluid px-5 my-5">
+  <div class="row justify-content-center">
+    <div class="col-xl-10">
+      <div class="card border-0 rounded-3 shadow-lg overflow-hidden">
+        <div class="card-body p-0">
+          <div class="row g-0">
+            <div class="col-sm-6 d-none d-sm-block bg-image"></div>
+            <div class="col-sm-6 p-4">
+              <div class="text-center">
+                <div class="h1 fw-light">Hubungi Kami!</div>
+                <p class="mb-4 text-muted">silahkan isi kuisioner di bawah ini untuk menghungi kami</p>
+              </div>
+
+              <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+
+           
+                <div class="form-floating mb-3">
+                  <input class="form-control" id="name" type="text" placeholder="Name" data-sb-validations="required" />
+                  <label for="name">Nama</label>
+                  <div class="invalid-feedback" data-sb-feedback="name:required">Wajib di isi!</div>
+                </div>
+
+               
+                <div class="form-floating mb-3">
+                  <input class="form-control" id="emailAddress" type="email" placeholder="Email Address" data-sb-validations="required,email" />
+                  <label for="emailAddress">Email</label>
+                  <div class="invalid-feedback" data-sb-feedback="emailAddress:required">Wajib di isi!</div>
+                  <div class="invalid-feedback" data-sb-feedback="emailAddress:email">Email tidak Valid!</div>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input class="form-control" id="name" type="text" placeholder="Name" data-sb-validations="required" />
+                  <label for="name">Alamat</label>
+                  <div class="invalid-feedback" data-sb-feedback="name:required">Wajib di isi!</div>
+                </div>
+
+                
+                <div class="form-floating mb-3">
+                  <textarea class="form-control" id="message" type="text" placeholder="Message" style="height: 10rem;" data-sb-validations="required"></textarea>
+                  <label for="message">Pesan</label>
+                  <div class="invalid-feedback" data-sb-feedback="message:required">Wajib di isi!</div>
+                </div>
+
+               
+                <div class="d-none" id="submitSuccessMessage">
+                  <div class="text-center mb-3">
+                    <div class="fw-bolder">Berhasil Terkirim, Silahkan tunggu Feedback dari kami</div>
+                  </div>
+                </div>
+
+                
+                <div class="d-none" id="submitErrorMessage">
+                  <div class="text-center text-danger mb-3">Gagal Mengirim Pesan!</div>
+                </div>
+
+              
+                <div class="d-grid">
+                  <button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Kirim</button>
+                </div>
+              </form>
+            
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+<footer>
+  <div class="text-center p-5 text-white" style="background-color: rgb(80, 46, 7);">
+    
+    <a href="https://www.copyright.gov/international-issues/ici-2022.html" class="text-white">© 2020 Copyright:</a>
+      <p>ANDINI PRIANI 221011700623 <br>01SIFE006</p>
+  </div>
+</footer>
+    <script src="bootstrap-5.2.3-dist/js/bootstrap.bundle.js"></script>
+    <script>
+      var today = new Date();
+      var day = today.getDay();
+      var daylist = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
+      var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+      var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+      var dateTime = date+' '+time;
+
+      document.getElementById("displayDateTime").innerHTML = dateTime + ' <br> Day :- ' + daylist[day];
+  </script> 
+
+<script>
+var myDate = new Date();
+var hrs = myDate.getHours();
+
+var greet;
+
+if (hrs < 12)
+    greet = 'Selamat Pagi';
+else if (hrs >= 12 && hrs <= 17)
+    greet = 'Selamat Siang';
+else if (hrs >= 17 && hrs <= 24)
+    greet = 'Selamat Malam';
+
+document.getElementById('lblGreetings').innerHTML =
+    '<b>' + greet;
+</script> 
+  </body>
+</html>
