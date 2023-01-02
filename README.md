@@ -1,2 +1,2 @@
-"Web CoffeShop sederhana" 
-"# CoffeShop-Web" 
+Web CoffeShop sederhana yang menggunakan bootstrap.
+selamat Belajar! :)
